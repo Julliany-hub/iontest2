@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
+// Importa o Core do Firebase.
+import { initializeApp } from 'firebase/app';
+
+// Importe apenas os componentes que forem necessários.
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -10,8 +16,23 @@ import { environment } from 'src/environments/environment';
 // Menu principal.
 export class AppComponent {
 
+  // Inicializa core do Firebase.
+  app = initializeApp(environment.firebase);
+
+  // Inicializa Authentication.
+  auth = getAuth(this.app);
+
   // Variáveis de ambiente.
   env = environment;
+
+  // Dados do usuário na view, quando não logado.
+  appUser = {
+    logged: false,
+    title: 'Login / Entrar',
+    url: '/login',
+    icon: 'log-in',
+    avatar: ''
+  }
 
   // Menu principal.
   public appPages = [
