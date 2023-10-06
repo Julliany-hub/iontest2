@@ -5,7 +5,11 @@ import { environment } from 'src/environments/environment';
 import { initializeApp } from 'firebase/app';
 
 // Importe apenas os componentes que forem necessários.
+<<<<<<< HEAD
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+=======
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+>>>>>>> 3b1ddd126ddaa9792c5097fd49fb599ac4394a2d
 
 @Component({
   selector: 'app-root',

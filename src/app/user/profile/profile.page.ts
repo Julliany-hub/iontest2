@@ -4,10 +4,18 @@ import { Component, OnInit } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 
 // Importe apenas os componentes que forem necessários.
+<<<<<<< HEAD
 import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
 
 // Environment contém as configurações do Firebase e de autenticação.
 import { environment } from 'src/environments/environment';
+=======
+import { 
+	getAuth,onAuthStateChanged,User} from 'firebase/auth';
+
+// Environment contém as configurações do Firebase e de autenticação.
+import { environment } from 'src/environments/environment'; 
+>>>>>>> 3b1ddd126ddaa9792c5097fd49fb599ac4394a2d
 
 @Component({
   selector: 'app-profile',
@@ -16,6 +24,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfilePage implements OnInit {
 
+<<<<<<< HEAD
   // Inicializa core do Firebase.
   app = initializeApp(environment.firebase);
 
@@ -33,6 +42,19 @@ export class ProfilePage implements OnInit {
 
   // Configurações.
   env = environment;
+=======
+  app = initializeApp(environment.firebase);
+
+  auth = getAuth(this.app);
+
+  user!: User;
+
+  userGreeting = 'Perfil de Usuário';
+
+  view = false;
+
+  env= environment;
+>>>>>>> 3b1ddd126ddaa9792c5097fd49fb599ac4394a2d
 
   constructor() { }
 
@@ -47,12 +69,16 @@ export class ProfilePage implements OnInit {
         this.user = userData;
         this.view = true;
 
+<<<<<<< HEAD
         // Cumprimentar usuário.
+=======
+>>>>>>> 3b1ddd126ddaa9792c5097fd49fb599ac4394a2d
         this.userGreeting = 'Olá ' + this.user.displayName?.split(' ')[0];
 
       } else {
 
         // Se não está logado, redireciona, por exemplo, para 'login'.
+<<<<<<< HEAD
         location.href = '/';
       }
     });
@@ -67,6 +93,23 @@ export class ProfilePage implements OnInit {
   // Acessa o perfil do usuário no Google.
   toGoogleProfile() {
     window.open('https://myaccount.google.com/', 'blank');
+=======
+        location.href = '/login';
+      }
+    });
+>>>>>>> 3b1ddd126ddaa9792c5097fd49fb599ac4394a2d
   }
 
+  logout() {
+    this.auth.signOut();
+    location.href = '/';
+  }
+
+  toGoogleProfile(){
+    window.open('https://myaccout.google.com/', 'blank');
+  }
+
+  
 }
+
+

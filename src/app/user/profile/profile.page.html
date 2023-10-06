@@ -12,7 +12,11 @@
   <!-- pre>{{ user | json }}</pre -->
 
   <ion-card>
+<<<<<<< HEAD
     <img [alt]="user.displayName" [src]="user.photoURL" referrerpolicy="no-referrer" style="display: block; margin: auto;" />
+=======
+    <img alt="{{ user.displayName }}" src="{{ user.photoURL }}" referrerpolicy="no-referrer" style="display: block; margin: auto;" />
+>>>>>>> 3b1ddd126ddaa9792c5097fd49fb599ac4394a2d
     <ion-card-header>
       <ion-card-title>{{ user.displayName }}</ion-card-title>
       <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
@@ -21,11 +25,21 @@
       <ul style="margin: 0; padding: 0 0 0 1rem;">
         <li>
           <strong>Cadastro: </strong>
+<<<<<<< HEAD
           {{ user.metadata.creationTime | date: 'dd/MM/yyyy' }} às {{ user.metadata.creationTime | date: 'HH:mm' }}
         </li>
         <li>
           <strong>Último login: </strong>
           {{ user.metadata.lastSignInTime | date: 'dd/MM/yyyy' }} às {{ user.metadata.lastSignInTime | date: 'HH:mm' }}
+=======
+          {{ user.metadata.creationTime | date: 'dd/MM/yyyy' }}
+          às {{ user.metadata.creationTime | date: 'HH:mm' }}
+        </li>
+        <li>
+          <strong>Último login: </strong>
+          {{ user.metadata.lastSignInTime | date: 'dd/MM/yyyy' }}
+          às {{ user.metadata.lastSignInTime | date: 'HH:mm' }}
+>>>>>>> 3b1ddd126ddaa9792c5097fd49fb599ac4394a2d
         </li>
       </ul>
     </ion-card-content>
